@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for api/Helper/JsonUtils.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">api/Helper</a> JsonUtils.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/106</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.56% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.15% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/106</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Validations = require('./Validations');
+/**
+ * Use changeKey to rename a key in an object while retaining the value in the object. This will facilitate refactoring
+ * of the internal structures of the API Server / Can be used in UI as well, with our disturbing the external interface.
+ * and vice/versa i.e refactoring API with disturbing the internal structures.
+ * @param originalKey
+ * @param newKey
+ * @param obj
+ * @returns {*}
+ */
+function <span class="fstat-no" title="function not covered" >changeKey(</span>originalKey, newKey, obj) {
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(obj)) {</span>
+        var newArr = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; obj.length; i++) {</span>
+            var result = <span class="cstat-no" title="statement not covered" >obj[i];</span>
+<span class="cstat-no" title="statement not covered" >            result[newKey] = obj[i][originalKey];</span>
+<span class="cstat-no" title="statement not covered" >            delete (result[originalKey]);</span>
+<span class="cstat-no" title="statement not covered" >            newArr.push(result);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return newArr;</span>
+    }
+    var o = <span class="cstat-no" title="statement not covered" >obj;</span>
+<span class="cstat-no" title="statement not covered" >    o[newKey] = obj[originalKey];</span>
+<span class="cstat-no" title="statement not covered" >    delete (o[originalKey]);</span>
+<span class="cstat-no" title="statement not covered" >    return o;</span>
+}
+exports.changeKey = changeKey;
+/**
+ * Nested implementation of changeKey, than traverse any depth for originalKey or newKey
+ * @param originalKey - is of format a.b.c meaning find a value c by navigating obj.a.b.c
+ * @param newKey - is of format x.y where the c will not be palced at a location obj.x.y
+ * TODO: Not implemented yet.
+ * @param obj
+ * @returns {*}
+ */
+function <span class="fstat-no" title="function not covered" >changeKeyNested(</span>originalKey, newKey, obj) {
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(obj)) {</span>
+        var newArr = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; obj.length; i++) {</span>
+            var result = <span class="cstat-no" title="statement not covered" >obj[i];</span>
+<span class="cstat-no" title="statement not covered" >            result[newKey] = obj[i][originalKey];</span>
+<span class="cstat-no" title="statement not covered" >            delete (result[originalKey]);</span>
+<span class="cstat-no" title="statement not covered" >            newArr.push(result);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return newArr;</span>
+    }
+    var o = <span class="cstat-no" title="statement not covered" >obj;</span>
+<span class="cstat-no" title="statement not covered" >    o[newKey] = obj[originalKey];</span>
+<span class="cstat-no" title="statement not covered" >    delete (o[originalKey]);</span>
+<span class="cstat-no" title="statement not covered" >    return o;</span>
+}
+exports.changeKeyNested = changeKeyNested;
+/**
+ * Used to collect query params from Swagger. It takes a list of params with keys (name, required, alias)
+ * For each param it checks in fromObj a field with given name, if value exists, sanitizes the value.
+ * if value does not exist but is required it will set the valid flag for the field as false.
+ * if atleastOneRequired is true, it sets the fromObj.valid=false if non of the params have values.
+ * if alias is provided it also makes the value available from fromObj.alias
+ *
+ * This can be used to extract param values from Swagger, and rename the field names to match the internal
+ * representation of the API server. Can be used in UI also to perform such transformation.
+ * @param params
+ * @param fromObj
+ * @param atleastOneRequired
+ * @returns sanitized, validated &amp; aliased fromObj. It also proivedes details with any errors i.e required
+ * fields not having values, a fieldNames collection and values collection of {name, value} pairs for convenience.
+ */
+function collectToObj(params, fromObj, atleastOneRequired) {
+    var result = {};
+    var fieldNames = [];
+    var details = [];
+    var atleastOneFieldHasValue = false;
+    var values = [];
+    result['valid'] = true;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!Validations.hasValue(params) || !Validations.hasValue(fromObj) || <span class="branch-2 cbranch-no" title="branch not covered" >!(typeof fromObj == 'object')</span>
+        || <span class="branch-3 cbranch-no" title="branch not covered" >!Array.isArray(params) </span>|| <span class="branch-4 cbranch-no" title="branch not covered" >params.length == 0)</span> {
+        result['valid'] = false;
+        result['details'] = ["Cannot process params"];
+        return result;
+    }
+<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; params.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        fieldNames.push(params[i].name);</span>
+        var value = <span class="cstat-no" title="statement not covered" >Validations.sanitizeField(fromObj[params[i].name]);</span>
+        var param = <span class="cstat-no" title="statement not covered" >{ name: params[i].name, value: value, required: params[i].required,</span>
+            hasValue: Validations.hasValue(value), valid: !(params[i].required &amp;&amp; !Validations.hasValue(value)) };
+<span class="cstat-no" title="statement not covered" >        result[params[i].name] = param;</span>
+<span class="cstat-no" title="statement not covered" >        if (params[i].alias)</span>
+<span class="cstat-no" title="statement not covered" >            result[params[i].alias] = param;</span>
+<span class="cstat-no" title="statement not covered" >        if (!param.valid) {</span>
+<span class="cstat-no" title="statement not covered" >            result['valid'] = false;</span>
+<span class="cstat-no" title="statement not covered" >            details.push("Value is required for field :" + params[i].name);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (param.hasValue) {</span>
+<span class="cstat-no" title="statement not covered" >            atleastOneFieldHasValue = true;</span>
+<span class="cstat-no" title="statement not covered" >            if (params[i].alias) {</span>
+<span class="cstat-no" title="statement not covered" >                values.push({ name: params[i].alias, value: param.value });</span>
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                values.push({ name: params[i].name, value: param.value });</span>
+            }
+        }
+    }
+<span class="cstat-no" title="statement not covered" >    if (atleastOneRequired &amp;&amp; !atleastOneFieldHasValue) {</span>
+<span class="cstat-no" title="statement not covered" >        details.push("Atleast one of the following fields must have values " + fieldNames);</span>
+<span class="cstat-no" title="statement not covered" >        result['valid'] = false;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    result['details'] = details;</span>
+<span class="cstat-no" title="statement not covered" >    result['values'] = values;</span>
+<span class="cstat-no" title="statement not covered" >    console.log(result);</span>
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+}
+exports.collectToObj = collectToObj;
+/**
+ * Nested object version of collectToObj. Used to sanitize, validate and alias the object recieved as
+ * body of the Swagger request.
+ */
+function <span class="fstat-no" title="function not covered" >collectObjNested(</span>params, input, atleastOneRequired) {
+    var fromObj = <span class="cstat-no" title="statement not covered" >JSON.parse(JSON.stringify(input));</span>
+    var details = <span class="cstat-no" title="statement not covered" >[];</span>
+    var atleastOneFieldHasValue = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >    fromObj.valid = true;</span>
+    var values = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >    if (!Validations.hasValue(params) || !Validations.hasValue(fromObj) || !(typeof fromObj == 'object')</span>
+        || !Array.isArray(params) || params.length == 0) {
+        var result = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >        result['valid'] = false;</span>
+<span class="cstat-no" title="statement not covered" >        result['details'] = ["Cannot process params"];</span>
+<span class="cstat-no" title="statement not covered" >        return result;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    params.forEach(<span class="fstat-no" title="function not covered" >fu</span>nction (param) {</span>
+        var originalKeys = <span class="cstat-no" title="statement not covered" >param.name.split('.');</span>
+        var value = <span class="cstat-no" title="statement not covered" >fromObj[originalKeys[0]];</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 1; i &lt; originalKeys.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (Validations.hasValue(value))</span>
+<span class="cstat-no" title="statement not covered" >                value = value[originalKeys[i]];</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!(typeof value == 'object')) {</span>
+<span class="cstat-no" title="statement not covered" >            value = Validations.sanitizeField(value);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!Validations.hasValue(value)) {</span>
+<span class="cstat-no" title="statement not covered" >            if (param.required) {</span>
+<span class="cstat-no" title="statement not covered" >                details.push({</span>
+                    name: param.name,
+                    alias: param.alias,
+                    message: 'Value is required for field',
+                    valid: false
+                });
+<span class="cstat-no" title="statement not covered" >                fromObj.valid = false;</span>
+            }
+        }
+        else {
+<span class="cstat-no" title="statement not covered" >            if (atleastOneRequired) {</span>
+<span class="cstat-no" title="statement not covered" >                atleastOneFieldHasValue = true;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (Validations.hasValue(param.alias)) {</span>
+                var newKeys = <span class="cstat-no" title="statement not covered" >param.alias.split('.');</span>
+<span class="cstat-no" title="statement not covered" >                for (var j = 0; j &lt; newKeys.length; j++) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (j === (newKeys.length - 1)) {</span>
+<span class="cstat-no" title="statement not covered" >                        fromObj[newKeys[j]] = value;</span>
+<span class="cstat-no" title="statement not covered" >                        values.push({ name: newKeys[j], value: value });</span>
+                    }
+                    else <span class="cstat-no" title="statement not covered" >if (!Validations.hasValue(fromObj[newKeys[j]]))</span>
+<span class="cstat-no" title="statement not covered" >                        fromObj[newKeys[j]] = {};</span>
+                }
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                values.push({ name: originalKeys[originalKeys.length - 1], value: value });</span>
+            }
+        }
+    });
+<span class="cstat-no" title="statement not covered" >    if (atleastOneRequired &amp;&amp; !atleastOneFieldHasValue) {</span>
+        var fields = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >        params.forEach(<span class="fstat-no" title="function not covered" >fu</span>nction (param) {</span>
+<span class="cstat-no" title="statement not covered" >            if (param.name)</span>
+<span class="cstat-no" title="statement not covered" >                fields += ',' + param.name;</span>
+        });
+<span class="cstat-no" title="statement not covered" >        fields = fields.replace(/,/, '');</span>
+<span class="cstat-no" title="statement not covered" >        details.push({ name: fields, message: 'Atleast one of the following fields must have values', valid: false });</span>
+<span class="cstat-no" title="statement not covered" >        fromObj.valid = false;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    fromObj.details = details;</span>
+<span class="cstat-no" title="statement not covered" >    fromObj.values = values;</span>
+<span class="cstat-no" title="statement not covered" >    console.log(fromObj);</span>
+<span class="cstat-no" title="statement not covered" >    return fromObj;</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 04 2017 14:32:33 GMT+0530 (IST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

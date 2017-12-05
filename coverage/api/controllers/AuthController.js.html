@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for api/controllers/AuthController.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">api/controllers</a> AuthController.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.53% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var bcrypt = require('bcrypt');
+var requestValidator = require('../Helper/requestValidator');
+var maskData = require('../Helper/maskData');
+module.exports = {
+    login:<span class="fstat-no" title="function not covered" >fu</span>nction(req, res) {
+        // Validate request paramaters
+        var params = <span class="cstat-no" title="statement not covered" >requestValidator.validateReqParams(req,['userName','password']);</span>
+<span class="cstat-no" title="statement not covered" >        if(!params) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >        if ( !req.body.userName || !req.body.password ) {</span>
+<span class="cstat-no" title="statement not covered" >            return res.json( 400, { err: {</span>
+                status: 'danger',
+                message: res.i18n('auth.login.badRequest')
+            }});
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        User.findOne( {userName:req.body.userName}, <span class="fstat-no" title="function not covered" >fu</span>nction(err, user) {</span>
+<span class="cstat-no" title="statement not covered" >            if ( err ) {</span>
+<span class="cstat-no" title="statement not covered" >                res.json( 500, { err: err } );</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if ( !user ) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.json( 401, { err: {</span>
+                    status: 'warn',
+                    message: res.i18n('auth.login.noUserFound')
+                }});
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            user.isPasswordValid( req.body.password, <span class="fstat-no" title="function not covered" >fu</span>nction (err, bool) {</span>
+<span class="cstat-no" title="statement not covered" >                if ( err ) <span class="cstat-no" title="statement not covered" >return res.serverError(err);</span></span>
+<span class="cstat-no" title="statement not covered" >                if ( bool ) {</span>
+<span class="cstat-no" title="statement not covered" >                    sails.io.on('connect', <span class="fstat-no" title="function not covered" >fu</span>nction (newlyConnectedSocket){</span>
+<span class="cstat-no" title="statement not covered" >                        console.log('Hello');</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    sails.sockets.join(req.socket, user.userName, <span class="fstat-no" title="function not covered" >fu</span>nction(err) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                            return res.serverError(err);</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        console.log(sails.sockets.rooms());</span>
+<span class="cstat-no" title="statement not covered" >                        return res.json( {user:maskData.maskReqData(user),token: TokenAuth.issueToken({ sub: {userName:user.userName,tenant:'ddn'</span>
+                            ,roleName:'admin'}},{expiresIn: 60*60*24})} );
+                    });
+<span class="cstat-no" title="statement not covered" >                    sails.sockets.broadcast(user.userName,'data', { greeting: 'Hola!' });</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    return res.json( 401, { err: {</span>
+                        status: 'danger',
+                        message: res.i18n('auth.login.invalidPassword')
+                    }});
+                }
+            });
+        });
+&nbsp;
+    },
+&nbsp;
+    signup:function(req, res) {
+        // Validate request paramaters
+        var params = requestValidator.validateReqParams(req,['userName','password']);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(!params) <span class="cstat-no" title="statement not covered" >return null;</span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if ( !req.body.userName || !req.body.password ) {
+<span class="cstat-no" title="statement not covered" >            return res.json( 400, { err: {</span>
+                status: 'danger',
+                message: res.i18n('auth.signup.badRequest')
+            }});
+        }
+        var newUser = {
+            userName: req.body.userName,
+            password: req.body.password,
+            active:true
+        };
+        <span class="missing-if-branch" title="if path not taken" >I</span>if ( sails.config.jwt.requireAccountActivation ) {
+<span class="cstat-no" title="statement not covered" >            if ( !sails.config.jwt.sendAccountActivationEmail ) {</span>
+<span class="cstat-no" title="statement not covered" >                sails.log.error('sails-hook-jwt:: An email function must be implemented through `sails.config.jwt.sendAccountActivationEmail` in order to enable the account activation feature. This will receive two parameters (user, activationLink).');</span>
+<span class="cstat-no" title="statement not covered" >                return res.json(500);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newUser.active = false;</span>
+        }
+&nbsp;
+        // Encrypt password before saving to database
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(newUser.password, salt, function(err, hash) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ( err ){
+<span class="cstat-no" title="statement not covered" >                    return res.json(500, { err: err });</span>
+                }
+&nbsp;
+                newUser.password = hash;
+&nbsp;
+                User.create(newUser).exec(function(err, user) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if ( err ) {
+<span class="cstat-no" title="statement not covered" >                        if ( err.ValidationError ) {</span>
+<span class="cstat-no" title="statement not covered" >                            console.log("error");</span>
+                            // return helper.convertWaterlineError(err, res);
+                        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        return res.json( err.status, { err: err } );</span>
+                    }
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if ( newUser.active ) {
+                        return res.json( { user: user, token: TokenAuth.issueToken({ sub: {userName:user.userName,tenant:'ddn'
+                            ,roleName:'admin'} },{expiresIn: 60*60*24}) } );
+                    }
+&nbsp;
+                    // return sails.config.jwt.sendAccountActivationEmail(res, user, helper.createActivationLink( user ));
+                });
+            });
+        });
+    }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 04 2017 14:32:33 GMT+0530 (IST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
